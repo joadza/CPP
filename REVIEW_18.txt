@@ -1,0 +1,7 @@
+REVIEW_18.txt
+
+Find_motive:
+Peut être possible de le faire plus optimisé sinon c'est good
+
+is_prime_prog:
+Bon
