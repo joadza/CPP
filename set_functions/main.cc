@@ -5,42 +5,24 @@
 template <class T>
 void print_me(const std::set<T> &s)
 {
-
   for (const auto &e : s)
     std::cout << e << ',';
   std::cout << '\n';
 }
 
-// Define set operations
-template <class T>
-std::set<T> set_union(const std::set<T> &s1, const std::set<T> &s2)
-{
-  std::set<T> s;
-  std::set_union(s1.begin(), s1.end(), s2.begin(), s2.end(),
-                 std::inserter(s, s.begin()));
-  return s;
-}
-
 int main()
 {
-
-  // Define set
-
-  auto s1 = std::set{1, 2, 3};
-  auto s2 = std::set{3, 4, 5};
+  auto s1 = std::set<int>{1, 2, 3};
+  auto s2 = std::set<int>{3, 4, 5};
   int n = 2;
 
   print_me(s1 + s2); // 1,2,3,4,5,
-
-  // Addd one set to other
-
-  /*
-
+  print_me(s1 - s2); // 1,2,
   print_me(s1 ^ s2); // 1,2,4,5,
   print_me(s1 * s2); // 4,5,6,7,8,
-  print_me(s1 ^ n); // 2,3,4,5,6
+  print_me(s1 ^ n);  // 2,3,4,5,6
 
-  auto s3 = std::set<std::string>{"","a","b"};
+  auto s3 = std::set<std::string>{"", "a", "b"};
 
   print_me(s3 ^ 0); // , #contains "empty string", (like in THLR)
   print_me(s3 ^ 4); // ,a,aa,aaa,aaaa,aaab,aab,aaba,aabb,ab,aba,abaa,abab,abb,abba,abbb,b,ba,baa,baaa,baab,bab,baba,babb,bb,bba,bbaa,bbab,bbb,bbba,bbbb,
@@ -49,10 +31,9 @@ int main()
   {
     print_me(s3 ^ -4);
   }
-  catch(const std::exception&)
+  catch (const std::exception &)
   {
     std::cout << "Good thing we caught that!\n";
   }
-  */
   return 0;
 }
