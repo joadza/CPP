@@ -5,6 +5,7 @@
 template <class T>
 void print_me(const std::set<T> &s)
 {
+
   for (const auto &e : s)
     std::cout << e << ',';
   std::cout << '\n';
@@ -34,7 +35,7 @@ int main()
   // Addd one set to other
 
   /*
-  print_me(s1 - s2); // 1,2,
+
   print_me(s1 ^ s2); // 1,2,4,5,
   print_me(s1 * s2); // 4,5,6,7,8,
   print_me(s1 ^ n); // 2,3,4,5,6
